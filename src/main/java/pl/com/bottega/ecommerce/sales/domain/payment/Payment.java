@@ -41,6 +41,6 @@ public class Payment implements IPayment{
 	}
 
     public Payment CreatePayment(Id aggregateId, ClientData clientData, Money amount) {
-            return CreatePayment(aggregateId, clientData, amount);
+            return new Payment(aggregateId, clientData, amount);
     }
 }

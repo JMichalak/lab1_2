@@ -24,7 +24,7 @@ import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.ClientData;
 import pl.com.bottega.ecommerce.sharedkernel.Money;
 
 
-public class Invoice  {
+public class Invoice implements IInvoice{
 
 
 	private ClientData client;
@@ -39,7 +39,7 @@ public class Invoice  {
 
 	private Id id;
 
-	Invoice(Id invoiceId, ClientData client) {
+	private Invoice(Id invoiceId, ClientData client) {
 		this.id = invoiceId;
 		this.client = client;
 		this.items = new ArrayList<InvoiceLine>();
@@ -75,5 +75,9 @@ public class Invoice  {
 	public Money getGros() {
 		return gros;
 	}
+
+    public Invoice CreateInvoice(Id invoiceId, ClientData client) {
+        return new Invoice(invoiceId, client);
+    }
 
 }
