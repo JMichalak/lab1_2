@@ -58,10 +58,10 @@ public class BookKeeper {
 
 			InvoiceLine invoiceLine = new InvoiceLine(item.getProductData(),
 					item.getQuantity(), net, tax);
-			invoice.addItem(invoiceLine);
+			((Invoice) invoice).addItem(invoiceLine);
 		}
 
-		return invoice;
+		return (Invoice) invoice;
 	}
 
    
