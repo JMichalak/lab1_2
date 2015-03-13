@@ -56,7 +56,7 @@ public class BookKeeper {
 			Tax tax = new Tax(taxValue, desc);
 			
 
-			InvoiceLine invoiceLine = new InvoiceLine(item.getProductData(),
+			 InvoiceLine invoiceLine = new InvoiceLine(item.getProductData(),
 					item.getQuantity(), net, tax);
 			((Invoice) invoice).addItem(invoiceLine);
 		}
